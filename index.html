@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>random password generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h2>Random password generator</h2>
+        <div class="box">
+            <div class="length">
+                <label for="length">Password length:</label>
+                    <span id="length-value">
+                        <img id="previous-button" src="assets/previous-svgrepo-com.svg" alt="Previous" onclick="previous()">
+                        <input type="number"  id="number-length" value="6">
+                        <img id="next-button" src="assets/next-svgrepo-com.svg" alt="Next" onclick="next()">
+                    </span>
+            </div>
+        </div>
+            <div class="uppercase"><input type="checkbox" name="" id="uppercase">Uppercase</div>
+            <div class="lowercase"><input type="checkbox" name="" id="lowercase">Lowercase</div>
+            <div class="specialcharacters"><input type="checkbox" name="" id="specialcharacters">special characters</div>
+        <button onclick="generate_password()">generate password</button>
+        <div class="password">  
+            <input type="text" id="password" readonly>
+
+            <img id="copy" src="assets/copy-svgrepo-com.svg" alt="copy">
+        </div>
+         <div id="pop_up" class="pop_up">
+            <img src="assets/icons8-tick.svg" alt="tick">
+            Password copied to clip board
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

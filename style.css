@@ -1,0 +1,133 @@
+*{
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: droid;
+    src: url(assets/DroidSans.ttf);
+}
+
+
+body{
+    background: linear-gradient(to right, rgb(42, 44, 59), rgb(41, 42, 46));
+    font-family: droid;
+}
+.main{
+    width: 400px;
+    margin: 20vh auto;
+    background: blueviolet;
+    border-radius: 7px;
+    padding: 10px;
+    position: relative;
+}
+.main h2{
+    text-align: center;
+    color: aliceblue;
+    background: rgba(136, 14, 14, 0.692);
+    padding: 5px;
+    border-radius: 157px;
+}
+.main .box{
+    color: rgb(3, 3, 3) ;
+    font-size: 20px;
+}
+.main input{
+    margin-right: 30px;
+    margin-bottom: 10px;
+}
+.main button{
+    font-size: 20px;
+    padding: 8px;
+    border-radius: 7px;
+    border: none;
+    text-align: center;
+    margin: 20px auto;
+    font-family: droid;
+    cursor: pointer;
+}
+.length{
+    width: 90%;
+    margin: 20px auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+#length-value {
+    border-radius: 4px;
+    color: white;
+    cursor: auto;
+    padding: 7px 17px;
+    display: flex;
+    background: linear-gradient(to right, rgb(42, 44, 59), rgb(41, 42, 46));
+}
+
+#number-length {
+    outline: none;
+    border: none;
+    color: white;
+    background: none;
+    font-family: droid;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 2px;
+    width: 25px;
+    pointer-events: none;
+}
+
+#number-length::-webkit-inner-spin-button {
+    appearance: none;
+}
+
+#previous-button,
+#next-button {
+    cursor: pointer;
+    padding: 3px;
+    margin: 3px;
+}
+
+.password{
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+.password input{
+    outline: none;
+    border: none;
+    height: 50px;
+    border-radius: 15px;
+    padding: 2px 2px 2px 1em;
+    font-size: 25px;
+    background: aliceblue;
+    color: rgb(3, 3, 3) ;
+    text-align: center;
+    pointer-events: none;
+}
+.password img{
+    height: 20px;
+    position: absolute;
+    cursor: pointer;
+    right: 4%;
+}
+.pop_up{
+    color: white;
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease;
+    right: 13%;
+    bottom: 20%;
+}
+.pop_up.show{
+    visibility: visible;
+    opacity: 1;
+}
+.pop_up img{
+    height: 25px;
+    margin: 5px;
+}
