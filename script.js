@@ -4,7 +4,7 @@ const uppercase = document.getElementById("uppercase");
 const lowercase = document.getElementById("lowercase");
 const specialcharacters = document.getElementById("specialcharacters");
 const copy_button = document.getElementById("copy");
-const length_number= document.getElementById("number-length")
+const length_number= document.getElementById("number-length");
 
 const lowercase_letters = "abcdefghijklmnopqrstuvwxyz";
 const uppercase_letters = lowercase_letters.toUpperCase();
@@ -16,8 +16,6 @@ function generate_password() {
     const useUppercase = uppercase.checked;
     const useLowercase = lowercase.checked;
     const useSymbols = specialcharacters.checked;
-    const number = Math.floor(Math.random() * 10);
-
 
     if (!useUppercase && !useLowercase && !useSymbols) {
         for (let i = 0; i < length_number.value; i++) {
@@ -25,7 +23,6 @@ function generate_password() {
             password_array.push(number);
         }
     } else {
-        password_array.push(number);
         if (useUppercase) {
             const uppercase_idx = Math.floor(Math.random() * uppercase_letters.length);
             password_array.push(uppercase_letters[uppercase_idx]);
@@ -39,18 +36,20 @@ function generate_password() {
             password_array.push(symbols[symbols_idx]);
         }
 
-        while (password_array.length < length_number.value-1) {
-            const number = Math.floor(Math.random() * 10);
-            password_array.push(number);
-            if (useUppercase) {
+        while (password_array.length < length_number.value) {
+            if (password_array.length < length_number.value) {
+                const number = Math.floor(Math.random() * 10);
+                password_array.push(number);
+            } 
+            if (useUppercase && password_array.length < length_number.value) {
                 const uppercase_idx = Math.floor(Math.random() * uppercase_letters.length);
                 password_array.push(uppercase_letters[uppercase_idx]);
             }
-            if (useLowercase) {
+            if (useLowercase && password_array.length < length_number.value) {
                 const lowercase_idx = Math.floor(Math.random() * lowercase_letters.length);
                 password_array.push(lowercase_letters[lowercase_idx]);
             }
-            if (useSymbols) {
+            if (useSymbols && password_array.length < length_number.value) {
                 const symbols_idx = Math.floor(Math.random() * symbols.length);
                 password_array.push(symbols[symbols_idx]);
             }
@@ -60,7 +59,6 @@ function generate_password() {
     password_array.sort(() => Math.random() - 0.5);
     input_box.value = password_array.join('');
 }
-
 
 copy_button.addEventListener('click', function() {
     const temp_input = document.createElement("textarea");
@@ -79,7 +77,6 @@ copy_button.addEventListener('click', function() {
     }, 2000);
 });
 
-
 function next(){
     if (length_number.value < 15){
         const next_number= Number(length_number.value)+1
@@ -92,5 +89,4 @@ function previous(){
         const next_number= Number(length_number.value)-1
         length_number.value=next_number
     }
-
 }
