@@ -44,6 +44,11 @@ body{
     margin: 20px auto;
     font-family: droid;
     cursor: pointer;
+    transition: .5s ease;
+}
+.main button:hover{
+    color:aliceblue;
+    background-color: rgba(136, 14, 14, 0.692);
 }
 .length{
     width: 90%;
@@ -51,6 +56,7 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
+    position: relative;
 }
 #length-value {
     border-radius: 4px;
@@ -130,4 +136,29 @@ body{
 .pop_up img{
     height: 25px;
     margin: 5px;
+}
+.error{
+    display: flex;
+    position: absolute;
+    bottom: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 39, 39);
+    opacity: 0;
+    visibility: hidden;
+}
+#uppercase,#lowercase,#specialcharacters{
+    cursor: pointer;
+}
+.error.show{
+    visibility: visible;
+    opacity: 1;
+}
+.errorIcon{
+    background-color: rgba(255, 255, 255, 0.922);
+    color: rgb(213, 49, 49);
+    font-size: 15px;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border-radius: 6px;
 }
